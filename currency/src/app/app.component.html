@@ -1,0 +1,43 @@
+<header>
+  <h1>{{ this.title | uppercase }} </h1>
+</header>
+
+<section>
+
+  <div class="selectBox">
+    <label for="locality-dropdown">Select the unit: </label>
+    <select id="locality-dropdown" class="custom-select" name="locality"  (change)="onChange($event.target.value)">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="JPY">JPY</option>
+    </select>
+  </div>
+
+  <table class="table table-striped" *ngIf="cryptos">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Currency</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let crypto of objectKeys(cryptos) let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cyptosName[i]}}</td>
+      <td>{{ crypto }}</td>
+      <td>{{this.symbol}} {{ cryptos['' + crypto + ''][this.unit] }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<footer>
+  <small>
+    {{ this.student + ' | ' +  this.stNumber | uppercase }}
+  </small>
+</footer>
+
+

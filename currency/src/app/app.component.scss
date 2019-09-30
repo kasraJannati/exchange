@@ -1,0 +1,20 @@
+table{
+  position: relative;
+  margin:0  auto;
+  width: 70%;
+  background: rgba(255,255,255,0.24);
+}
+th, td{
+  text-align: center;
+  font-weight: bold;
+}
+thead{
+  background: #375f82;
+  color: #fff;
+}
+
+.selectBox{
+  width: 200px;
+  margin: 20px auto;
+  color: #ffffff;
+}
